@@ -129,7 +129,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `resource` **[string][37]** A URL for which you want to retrieve the most recent report. You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific report.
+-   `scanIdOrUrl` **[string][37]** A URL for which you want to retrieve the most recent report. You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific report.
 -   `allinfo` **[boolean][38]** Return additional information about the file (optional, default `false`)
 -   `scan` **[number][41]** This is an optional parameter that when set to "1" will automatically submit the URL for analysis if no report is found for it in VirusTotal's database. In this case the result will contain a scan_id field that can be used to query the analysis report later on. (optional, default `0`)
 

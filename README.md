@@ -27,3 +27,13 @@ virusTotal.fileScan(buffer, 'file.txt')
 ```
 
 For more info please refer to [documentation](./docs/virus-total.md)
+
+## Changes
+
+### Version 1.0.1
+
+Documentation update on `urlReport`
+
+### Version 1.0.0
+
+Initial release

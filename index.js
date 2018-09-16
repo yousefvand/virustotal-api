@@ -298,13 +298,13 @@ class VirusTotal {
 
   /**
    * @summary Retrieve URL scan reports
-   * @param {string} resource - A URL for which you want to retrieve the most recent report. You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific report.
+   * @param {string} scanIdOrUrl - A URL for which you want to retrieve the most recent report. You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific report.
    * @param {boolean} [allinfo=false] - Return additional information about the file
    * @param {number} [scan=0] - This is an optional parameter that when set to "1" will automatically submit the URL for analysis if no report is found for it in VirusTotal's database. In this case the result will contain a scan_id field that can be used to query the analysis report later on.
    * @returns {Promise} - Response object
    * @memberof VirusTotal
    */
-  async urlReport (resource, allinfo = false, scan = 0) {
+  async urlReport (scanIdOrUrl, allinfo = false, scan = 0) {
     let res
     let url = urlReportUrl
     if (allinfo) {
@@ -314,7 +314,7 @@ class VirusTotal {
       url += `&scan=${scan}`
     }
     try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource))
+      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', scanIdOrUrl))
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError

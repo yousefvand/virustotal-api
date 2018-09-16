@@ -1,6 +1,6 @@
 {
   "name": "virustotal-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "virustotal api wrapper",
   "main": "index.js",
   "scripts": {
