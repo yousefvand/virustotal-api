@@ -92,6 +92,9 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   fileScan (fileContent, fileName = 'unknown') {
+    if (fileContent && fileContent.byteLength < 1) {
+      throw new Error(`File content buffer is empty! Make sure file exists and your antivirus dosen't block access to it.`)
+    }
     const data = {
       apikey: this._apiKey,
       file: {
