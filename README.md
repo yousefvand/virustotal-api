@@ -1,5 +1,7 @@
 # virustotal-api
 
+[![https://nodei.co/npm/virustotal-api.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/virustotal-api.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/virustotal-api)
+
 [Virustotal API v2.0](https://developers.virustotal.com/v2.0/reference) wrapper class
 
 ## Install
