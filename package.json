@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/remisa-yousefvand/virustotal-api.git"
+    "url": "git+https://github.com/yousefvand/virustotal-api.git"
   },
   "keywords": [
     "virustotal",
@@ -19,9 +19,9 @@
   "author": "Remisa Yousefvand <remisa.yousefvand@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/remisa-yousefvand/virustotal-api/issues"
+    "url": "https://github.com/yousefvand/virustotal-api/issues"
   },
-  "homepage": "https://github.com/remisa-yousefvand/virustotal-api#readme",
+  "homepage": "https://github.com/yousefvand/virustotal-api#readme",
   "dependencies": {
     "needle": "^2.2.2"
   },
