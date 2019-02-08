@@ -1,6 +1,6 @@
 {
   "name": "virustotal-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "virustotal api wrapper",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/yousefvand/virustotal-api#readme",
   "dependencies": {
-    "needle": "^2.2.2"
+    "needle": "^2.2.4"
   },
   "devDependencies": {
-    "cspell": "^3.1.3",
-    "documentation": "^8.1.2",
+    "cspell": "^3.2.1",
+    "documentation": "^9.1.1",
     "standard": "^12.0.1"
   }
 }

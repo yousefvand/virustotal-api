@@ -21,7 +21,7 @@ fs.readFile(__filename, (err, data) => {
   if (err) {
     console.log(`Cannot read file. ${err}`)
   } else {
-    virusTotal.fileScan(buffer, 'file.js')
+    virusTotal.fileScan(data, 'file.js')
     .then((response) => {
       let resource = response.resource
       // sometime later try:
@@ -38,6 +38,10 @@ fs.readFile(__filename, (err, data) => {
 For more info please refer to [documentation](./docs/virus-total.md)
 
 ## Changes
+
+### Version 1.0.3
+
+- Dependency update to fix security vulnerabilities (lodash).
 
 ### Version 1.0.2
 
