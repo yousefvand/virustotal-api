@@ -39,6 +39,10 @@ For more info please refer to [documentation](./docs/virus-total.md)
 
 ## Changes
 
+### Version 1.0.4
+
+- Dependency update to fix security vulnerabilities (js-yaml).
+
 ### Version 1.0.3
 
 - Dependency update to fix security vulnerabilities (lodash).
