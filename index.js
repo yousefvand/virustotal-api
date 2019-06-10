@@ -72,7 +72,7 @@ class VirusTotal {
       url += `&allinfo=true`
     }
     try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource))
+      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -129,7 +129,7 @@ class VirusTotal {
   async fileScanUploadUrl () {
     let res
     try {
-      res = await needle('get', fileScanUploadUrlUrl.replace('<apikey>', this._apiKey))
+      res = await needle('get', fileScanUploadUrlUrl.replace('<apikey>', this._apiKey), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -177,7 +177,7 @@ class VirusTotal {
   async fileDownload (hash) {
     let res
     try {
-      res = await needle('get', fileDownloadUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash))
+      res = await needle('get', fileDownloadUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -198,7 +198,7 @@ class VirusTotal {
   async fileBehaviour (hash) {
     let res
     try {
-      res = await needle('get', fileBehaviourUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash))
+      res = await needle('get', fileBehaviourUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -219,7 +219,7 @@ class VirusTotal {
   async fileNetworkTraffic (hash) {
     let res
     try {
-      res = await needle('get', fileNetworkTrafficUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash))
+      res = await needle('get', fileNetworkTrafficUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -240,7 +240,7 @@ class VirusTotal {
   async fileFeed (package_) {
     let res
     try {
-      res = await needle('get', fileFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_))
+      res = await needle('get', fileFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -261,7 +261,7 @@ class VirusTotal {
   async fileClusters (date) {
     let res
     try {
-      res = await needle('get', fileClustersUrl.replace('<apikey>', this._apiKey).replace('<date>', date))
+      res = await needle('get', fileClustersUrl.replace('<apikey>', this._apiKey).replace('<date>', date), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -287,7 +287,7 @@ class VirusTotal {
       url += `&offset=${offset}`
     }
     try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<query>', query))
+      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<query>', query), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -317,7 +317,7 @@ class VirusTotal {
       url += `&scan=${scan}`
     }
     try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', scanIdOrUrl))
+      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', scanIdOrUrl), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -365,7 +365,7 @@ class VirusTotal {
   async urlFeed (package_) {
     let res
     try {
-      res = await needle('get', urlFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_))
+      res = await needle('get', urlFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -386,7 +386,7 @@ class VirusTotal {
   async domainReport (domain) {
     let res
     try {
-      res = await needle('get', domainReportUrl.replace('<apikey>', this._apiKey).replace('<domain>', domain))
+      res = await needle('get', domainReportUrl.replace('<apikey>', this._apiKey).replace('<domain>', domain), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -412,7 +412,7 @@ class VirusTotal {
     }
     let res
     try {
-      res = await needle('get', ipAddressReportUrl.replace('<apikey>', this._apiKey).replace('<ip>', ip))
+      res = await needle('get', ipAddressReportUrl.replace('<apikey>', this._apiKey).replace('<ip>', ip), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
@@ -438,7 +438,7 @@ class VirusTotal {
       url += `&before=${before}`
     }
     try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource))
+      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource), this._options)
       let resError = this._checkResponse(res)
       if (resError) {
         throw resError
