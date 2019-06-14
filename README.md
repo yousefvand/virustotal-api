@@ -39,6 +39,10 @@ For more info please refer to [documentation](./docs/virus-total.md)
 
 ## Changes
 
+### Version 1.1.0
+
+- Passing `options` to web client ([needle](https://www.npmjs.com/package/needle)). Thanks to @thepocp.
+
 ### Version 1.0.5
 
 - Dependency update to fix security vulnerabilities.
