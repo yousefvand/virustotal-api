@@ -24,7 +24,7 @@ fs.readFile(__filename, (err, data) => {
     virusTotal.fileScan(data, 'file.js')
     .then((response) => {
       let resource = response.resource
-      // sometime later try:
+      // sometimes later try:
       virusTotal.fileReport(resource)
         .then((result) => {
           console.log(result)
@@ -39,9 +39,13 @@ For more info please refer to [documentation](./docs/virus-total.md)
 
 ## Changes
 
+### Version 1.1.1
+
+- Dependency update to fix security vulnerabilities (eslint-utils, lodash).
+
 ### Version 1.1.0
 
-- Passing `options` to web client ([needle](https://www.npmjs.com/package/needle)). Thanks to @thepocp.
+- Passing `options` to web client ([needle](https://www.npmjs.com/package/needle)). Thanks to [@thepocp](https://github.com/thepocp).
 
 ### Version 1.0.5
 
