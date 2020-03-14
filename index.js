@@ -20,9 +20,9 @@ const commentsGetUrl = 'https://www.virustotal.com/vtapi/v2/comments/get?apikey=
 const commentsPutUrl = 'https://www.virustotal.com/vtapi/v2/comments/put'
 
 // Error Codes
-const ERROR_204 = `Request rate limit exceeded. You are making more requests than allowed.`
-const ERROR_400 = `Bad request. Your request was somehow incorrect. This can be caused by missing arguments or arguments with wrong values.`
-const ERROR_403 = `Forbidden. You don't have enough privileges to make the request. You may be doing a request without providing an API key or you may be making a request to a Private API without having the appropriate privileges.`
+const ERROR_204 = 'Request rate limit exceeded. You are making more requests than allowed.'
+const ERROR_400 = 'Bad request. Your request was somehow incorrect. This can be caused by missing arguments or arguments with wrong values.'
+const ERROR_403 = 'Forbidden. You don\'t have enough privileges to make the request. You may be doing a request without providing an API key or you may be making a request to a Private API without having the appropriate privileges.'
 
 /**
  * @summary Virustotal API v2.0 wrapper
@@ -66,21 +66,16 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileReport (resource, allinfo = false) {
-    let res
     let url = fileReportUrl
     if (allinfo) {
-      url += `&allinfo=true`
+      url += '&allinfo=true'
     }
-    try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -93,7 +88,7 @@ class VirusTotal {
    */
   fileScan (fileContent, fileName = 'unknown') {
     if (fileContent && fileContent.byteLength < 1) {
-      throw new Error(`File content buffer is empty! Make sure file exists and your antivirus does not block access to it.`)
+      throw new Error('File content buffer is empty! Make sure file exists and your antivirus does not block access to it.')
     }
     const data = {
       apikey: this._apiKey,
@@ -110,7 +105,7 @@ class VirusTotal {
         if (err) {
           reject(err)
         } else {
-          let resError = this._checkResponse(res)
+          const resError = this._checkResponse(res)
           if (resError) {
             reject(resError)
           } else {
@@ -127,17 +122,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileScanUploadUrl () {
-    let res
-    try {
-      res = await needle('get', fileScanUploadUrlUrl.replace('<apikey>', this._apiKey), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', fileScanUploadUrlUrl.replace('<apikey>', this._apiKey), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -157,7 +147,7 @@ class VirusTotal {
         if (err) {
           reject(err)
         } else {
-          let resError = this._checkResponse(res)
+          const resError = this._checkResponse(res)
           if (resError) {
             reject(resError)
           } else {
@@ -175,17 +165,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileDownload (hash) {
-    let res
-    try {
-      res = await needle('get', fileDownloadUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', fileDownloadUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -196,17 +181,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileBehaviour (hash) {
-    let res
-    try {
-      res = await needle('get', fileBehaviourUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', fileBehaviourUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -217,17 +197,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileNetworkTraffic (hash) {
-    let res
-    try {
-      res = await needle('get', fileNetworkTrafficUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', fileNetworkTrafficUrl.replace('<apikey>', this._apiKey).replace('<hash>', hash), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -238,17 +213,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileFeed (package_) {
-    let res
-    try {
-      res = await needle('get', fileFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', fileFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -259,17 +229,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileClusters (date) {
-    let res
-    try {
-      res = await needle('get', fileClustersUrl.replace('<apikey>', this._apiKey).replace('<date>', date), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', fileClustersUrl.replace('<apikey>', this._apiKey).replace('<date>', date), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -281,21 +246,16 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async fileSearch (query, offset = -1) {
-    let res
     let url = fileSearchUrl
     if (offset !== -1) {
       url += `&offset=${offset}`
     }
-    try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<query>', query), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<query>', query), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -308,24 +268,19 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async urlReport (scanIdOrUrl, allinfo = false, scan = 0) {
-    let res
     let url = urlReportUrl
     if (allinfo) {
-      url += `&allinfo=true`
+      url += '&allinfo=true'
     }
     if (scan !== 0) {
       url += `&scan=${scan}`
     }
-    try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', scanIdOrUrl), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', scanIdOrUrl), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -345,7 +300,7 @@ class VirusTotal {
         if (err) {
           reject(err)
         } else {
-          let resError = this._checkResponse(res)
+          const resError = this._checkResponse(res)
           if (resError) {
             reject(resError)
           } else {
@@ -363,17 +318,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async urlFeed (package_) {
-    let res
-    try {
-      res = await needle('get', urlFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', urlFeedUrl.replace('<apikey>', this._apiKey).replace('<package>', package_), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -384,17 +334,12 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async domainReport (domain) {
-    let res
-    try {
-      res = await needle('get', domainReportUrl.replace('<apikey>', this._apiKey).replace('<domain>', domain), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', domainReportUrl.replace('<apikey>', this._apiKey).replace('<domain>', domain), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -410,17 +355,12 @@ class VirusTotal {
         throw Error(`Invalid IP address: ${ip}`)
       }
     }
-    let res
-    try {
-      res = await needle('get', ipAddressReportUrl.replace('<apikey>', this._apiKey).replace('<ip>', ip), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', ipAddressReportUrl.replace('<apikey>', this._apiKey).replace('<ip>', ip), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -432,21 +372,16 @@ class VirusTotal {
    * @memberof VirusTotal
    */
   async commentsGet (resource, before = null) {
-    let res
     let url = commentsGetUrl
     if (before) {
       url += `&before=${before}`
     }
-    try {
-      res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource), this._options)
-      let resError = this._checkResponse(res)
-      if (resError) {
-        throw resError
-      } else {
-        return res.body
-      }
-    } catch (err) {
-      throw err
+    const res = await needle('get', url.replace('<apikey>', this._apiKey).replace('<resource>', resource), this._options)
+    const resError = this._checkResponse(res)
+    if (resError) {
+      throw resError
+    } else {
+      return res.body
     }
   }
 
@@ -468,7 +403,7 @@ class VirusTotal {
         if (err) {
           reject(err)
         } else {
-          let resError = this._checkResponse(res)
+          const resError = this._checkResponse(res)
           if (resError) {
             reject(resError)
           } else {
