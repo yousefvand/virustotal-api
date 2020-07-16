@@ -39,6 +39,10 @@ For more info please refer to [documentation](./docs/virus-total.md)
 
 ## Changes
 
+### Version 1.1.3
+
+- Dependency update to fix security vulnerabilities.
+
 ### Version 1.1.2
 
 - Some refactoring.

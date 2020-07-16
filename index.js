@@ -44,7 +44,8 @@ class VirusTotal {
       follow_max: 5, // follow up to five redirects
       rejectUnauthorized: true, // verify SSL certificate
       multipart: true,
-      timeout: 2 * 60 * 1000
+      timeout: 2 * 60 * 1000,
+      user_agent: 'virustotal-api'
     }
   }
 
