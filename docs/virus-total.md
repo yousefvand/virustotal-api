@@ -2,45 +2,45 @@
 
 ### Table of Contents
 
--   [VirusTotal][1]
-    -   [apiKey][2]
-    -   [fileReport][3]
-        -   [Parameters][4]
-    -   [fileScan][5]
-        -   [Parameters][6]
-    -   [fileScanUploadUrl][7]
-    -   [fileRescan][8]
-        -   [Parameters][9]
-    -   [fileDownload][10]
-        -   [Parameters][11]
-    -   [fileBehaviour][12]
-        -   [Parameters][13]
-    -   [fileNetworkTraffic][14]
-        -   [Parameters][15]
-    -   [fileFeed][16]
-        -   [Parameters][17]
-    -   [fileClusters][18]
-        -   [Parameters][19]
-    -   [fileSearch][20]
-        -   [Parameters][21]
-    -   [urlReport][22]
-        -   [Parameters][23]
-    -   [urlScan][24]
-        -   [Parameters][25]
-    -   [urlFeed][26]
-        -   [Parameters][27]
-    -   [domainReport][28]
-        -   [Parameters][29]
-    -   [ipAddressReport][30]
-        -   [Parameters][31]
-    -   [commentsGet][32]
-        -   [Parameters][33]
-    -   [commentsPut][34]
-        -   [Parameters][35]
+*   [VirusTotal][1]
+    *   [apiKey][2]
+    *   [fileReport][3]
+        *   [Parameters][4]
+    *   [fileScan][5]
+        *   [Parameters][6]
+    *   [fileScanUploadUrl][7]
+    *   [fileRescan][8]
+        *   [Parameters][9]
+    *   [fileDownload][10]
+        *   [Parameters][11]
+    *   [fileBehaviour][12]
+        *   [Parameters][13]
+    *   [fileNetworkTraffic][14]
+        *   [Parameters][15]
+    *   [fileFeed][16]
+        *   [Parameters][17]
+    *   [fileClusters][18]
+        *   [Parameters][19]
+    *   [fileSearch][20]
+        *   [Parameters][21]
+    *   [urlReport][22]
+        *   [Parameters][23]
+    *   [urlScan][24]
+        *   [Parameters][25]
+    *   [urlFeed][26]
+        *   [Parameters][27]
+    *   [domainReport][28]
+        *   [Parameters][29]
+    *   [ipAddressReport][30]
+        *   [Parameters][31]
+    *   [commentsGet][32]
+        *   [Parameters][33]
+    *   [commentsPut][34]
+        *   [Parameters][35]
 
 ## VirusTotal
 
--   **See: [https://developers.virustotal.com/v2.0/reference][36]**
+*   **See**: [https://developers.virustotal.com/v2.0/reference][36]
 
 ### apiKey
 
@@ -50,8 +50,8 @@ Returns **[string][37]** API key
 
 #### Parameters
 
--   `resource` **[string][37]** Resource(s) to be retrieved
--   `allinfo` **[boolean][38]** [PRIVATE API] - Return all info (optional, default `false`)
+*   `resource` **[string][37]** Resource(s) to be retrieved
+*   `allinfo` **[boolean][38]** \[PRIVATE API] - Return all info (optional, default `false`)
 
 Returns **[Promise][39]** Response object
 
@@ -59,8 +59,8 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `fileContent` **[Buffer][40]** Binary content of the file
--   `fileName` **[string][37]** Provides metadata to antiviruses if specified (optional, default `'unknown'`)
+*   `fileContent` **[Buffer][40]** Binary content of the file
+*   `fileName` **[string][37]** Provides metadata to antiviruses if specified (optional, default `'unknown'`)
 
 Returns **[Promise][39]** Response object
 
@@ -72,7 +72,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `resource` **[string][37]** Resource(s) to be retrieved
+*   `resource` **[string][37]** Resource(s) to be retrieved
 
 Returns **[Promise][39]** Response object
 
@@ -80,7 +80,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `hash` **[string][37]** The md5/sha1/sha256 hash of the file you want to download
+*   `hash` **[string][37]** The md5/sha1/sha256 hash of the file you want to download
 
 Returns **[Promise][39]** Response object
 
@@ -88,7 +88,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `hash` **[string][37]** The md5/sha1/sha256 hash of the file whose dynamic behavioural report you want to retrieve.
+*   `hash` **[string][37]** The md5/sha1/sha256 hash of the file whose dynamic behavioural report you want to retrieve.
 
 Returns **[Promise][39]** Response object
 
@@ -96,7 +96,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `hash` **[string][37]** The md5/sha1/sha256 hash of the file whose network traffic dump you want to retrieve
+*   `hash` **[string][37]** The md5/sha1/sha256 hash of the file whose network traffic dump you want to retrieve
 
 Returns **[Promise][39]** Response object
 
@@ -104,7 +104,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `package_` **[string][37]** Indicates a time window to pull reports on all items received during such window. Timestamp less than 24 hours ago, UTC.
+*   `package_` **[string][37]** Indicates a time window to pull reports on all items received during such window. Timestamp less than 24 hours ago, UTC.
 
 Returns **[Promise][39]** Response object
 
@@ -112,7 +112,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `date` **[string][37]** A date for which we want to access the clustering details in YYYY-MM-DD format.
+*   `date` **[string][37]** A date for which we want to access the clustering details in YYYY-MM-DD format.
 
 Returns **[Promise][39]** Response object
 
@@ -120,8 +120,8 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `query` **[string][37]** Search query
--   `offset` **[string][37]** The offset value returned by a previous identical query, allows you to paginate over the results. (optional, default `-1`)
+*   `query` **[string][37]** Search query
+*   `offset` **[string][37]** The offset value returned by a previous identical query, allows you to paginate over the results. (optional, default `-1`)
 
 Returns **[Promise][39]** Response object
 
@@ -129,9 +129,9 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `scanIdOrUrl` **[string][37]** A URL for which you want to retrieve the most recent report. You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific report.
--   `allinfo` **[boolean][38]** Return additional information about the file (optional, default `false`)
--   `scan` **[number][41]** This is an optional parameter that when set to "1" will automatically submit the URL for analysis if no report is found for it in VirusTotal's database. In this case the result will contain a scan_id field that can be used to query the analysis report later on. (optional, default `0`)
+*   `scanIdOrUrl` **[string][37]** A URL for which you want to retrieve the most recent report. You may also specify a scan_id (sha256-timestamp as returned by the URL submission API) to access a specific report.
+*   `allinfo` **[boolean][38]** Return additional information about the file (optional, default `false`)
+*   `scan` **[number][41]** This is an optional parameter that when set to "1" will automatically submit the URL for analysis if no report is found for it in VirusTotal's database. In this case the result will contain a scan_id field that can be used to query the analysis report later on. (optional, default `0`)
 
 Returns **[Promise][39]** Response object
 
@@ -139,7 +139,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `url` **[string][37]** The URL that should be scanned
+*   `url` **[string][37]** The URL that should be scanned
 
 Returns **[Promise][39]** Response object
 
@@ -147,7 +147,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `package_` **[string][37]** Indicates a time window to pull reports on all items received during such window
+*   `package_` **[string][37]** Indicates a time window to pull reports on all items received during such window
 
 Returns **[Promise][39]** Response object
 
@@ -155,7 +155,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `domain` **[string][37]** Domain name
+*   `domain` **[string][37]** Domain name
 
 Returns **[Promise][39]** Response object
 
@@ -163,7 +163,7 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `ip` **[string][37]** IP address
+*   `ip` **[string][37]** IP address
 
 Returns **[Promise][39]** Response object
 
@@ -171,8 +171,8 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `resource` **[string][37]** Either an md5/sha1/sha256 hash of the file or the URL itself you want to retrieve.
--   `before` **[string][37]** A datetime token that allows you to iterate over all comments on a specific item whenever it has been commented on more than 25 times. (optional, default `null`)
+*   `resource` **[string][37]** Either an md5/sha1/sha256 hash of the file or the URL itself you want to retrieve.
+*   `before` **[string][37]** A datetime token that allows you to iterate over all comments on a specific item whenever it has been commented on more than 25 times. (optional, default `null`)
 
 Returns **[Promise][39]** Response object
 
@@ -180,8 +180,8 @@ Returns **[Promise][39]** Response object
 
 #### Parameters
 
--   `resource` **[string][37]** Either an md5/sha1/sha256 hash of the file you want to review or the URL itself that you want to comment on
--   `comment` **[string][37]** The comment's text
+*   `resource` **[string][37]** Either an md5/sha1/sha256 hash of the file you want to review or the URL itself that you want to comment on
+*   `comment` **[string][37]** The comment's text
 
 Returns **[Promise][39]** Response object
 
