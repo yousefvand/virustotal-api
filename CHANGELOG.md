@@ -1,5 +1,9 @@
 ## Changes
 
+### Version 1.1.6
+
+- Dependency update to fix security vulnerabilities.
+
 ### Version 1.1.5
 
 - Dependency update to fix security vulnerabilities.
