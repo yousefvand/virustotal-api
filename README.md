@@ -39,6 +39,6 @@ For more info please refer to [documentation](./docs/virus-total.md)
 
 See full change log [here](CHANGELOG.md).
 
-### Version 1.1.6
+### Version 1.1.7
 
 - Dependency update to fix security vulnerabilities.
