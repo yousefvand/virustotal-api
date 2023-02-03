@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "cspell": "^5.9.0",
-    "documentation": "^13.2.5",
+    "documentation": "^14.0.1",
     "standard": "^16.0.3"
   }
 }
